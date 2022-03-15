@@ -19,6 +19,17 @@ Before you start building out the application, the first step that you should
 take is to draw out your component hierarchy. This will tell you how components
 can pass data to each other as well as where that information should be stored.
 
+## hierarchy
+
+<!--
+APP
+  |--Pokemon Page useState for: search, pokemon collection
+      |--Search
+      |--Form useState
+      |--Collection
+          |--Card
+ -->
+
 ## Project Goals
 
 - Create an index displaying Pokemon 'cards'
