@@ -14,15 +14,23 @@ function PokemonPage() {
 			.then((pokemon) => setPokemon(pokemon));
 	}, []);
 
+	function handleSearch(event) {
+		return setSearch(event.target.value);
+	}
+
+	const displayedPokemon = () => {
+		return pokemon.filter((p) => p.name.includes(search.toLowerCase()));
+	};
+
 	return (
 		<Container>
 			<h1>Pokemon Searcher</h1>
 			<br />
 			<PokemonForm />
 			<br />
-			<Search />
+			<Search search={search} handleSearch={handleSearch} />
 			<br />
-			<PokemonCollection pokemon={pokemon} />
+			<PokemonCollection pokemon={displayedPokemon()} />
 		</Container>
 	);
 }
